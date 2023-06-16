@@ -1,10 +1,37 @@
-.container-card{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 204px;
-    margin: 1em;
-    max-width: 340px;
-    border-radius: 39px;
-    transition: background-image 1s ease;
+.container-card {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 204px;
+  margin: 1em;
+  max-width: 340px;
+  border-radius: 39px;
+  transition: background-image 1s ease;
+
+  & .content-movie {
+    position: absolute;
+    bottom: 0;
+    margin: 1.5em;
+
+    & .title-movie {
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+    }
+  }
+
+  & .play {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff722a;
+    background-color: #fff;
+    border-radius: 50%;
+    left: 15em;
+    top: 9em;
+  }
 }

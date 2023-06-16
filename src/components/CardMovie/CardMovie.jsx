@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './CardMovie.scss';
+import React, { useEffect, useState } from "react";
+import "./CardMovie.scss";
 
 export const CardMovie = ({ data }) => {
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
@@ -9,7 +9,7 @@ export const CardMovie = ({ data }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentMovieIndex((prevIndex) => (prevIndex + 1) % data.length);
-    }, 5000);
+    }, 8000);
 
     return () => {
       clearInterval(timer);
@@ -22,14 +22,23 @@ export const CardMovie = ({ data }) => {
 
   const currentMovie = data[currentMovieIndex];
 
-const fondo = IMAGE_PATH+currentMovie.backdrop_path
-console.log('fondo', fondo);
-  // console.log('data desde el hijo',data);
+  const fondo = IMAGE_PATH + currentMovie.backdrop_path;
 
   return (
     <>
-    <div className='container-card' style={{ backgroundImage: `url(${fondo})`}}>hola</div>
-      {/* <h1 className="hola">{currentMovie.title}</h1> */}
+      <div
+        className="container-card"
+        style={{ backgroundImage: `url(${fondo})` }}
+      >
+        <div className="content-movie">
+          <div>
+            <h1 className="title-movie">{currentMovie.title}</h1>
+          </div>
+        </div>
+        <div className="play">
+          <i className="fa-solid fa-play"></i>
+        </div>
+      </div>
     </>
   );
 };

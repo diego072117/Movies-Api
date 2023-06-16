@@ -1,0 +1,15 @@
+.list-card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-list{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 8.5em;
+    height: 8.5em;
+    margin: 10px;
+    border-radius: 25px;
+}

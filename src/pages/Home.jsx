@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardMovie } from "../components/CardMovie/CardMovie";
+import { ListCards } from "../components/ListCards/ListCards";
 import { Nav } from "../components/Nav/Nav";
 import { getAllMovies } from "../services/Api";
 import "./Home.scss";
@@ -54,6 +55,8 @@ export const Home = () => {
         </div>
       </div>
       <CardMovie data={movies}/>
+      <ListCards data={movies}/>
+
       <Nav />
     </>
   );
