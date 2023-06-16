@@ -26,6 +26,8 @@ export const CardMovie = ({ data }) => {
 
   return (
     <>
+    <div className="container-card-principal">
+
       <div
         className="container-card"
         style={{ backgroundImage: `url(${fondo})` }}
@@ -39,6 +41,7 @@ export const CardMovie = ({ data }) => {
           <i className="fa-solid fa-play"></i>
         </div>
       </div>
+    </div>
     </>
   );
 };
