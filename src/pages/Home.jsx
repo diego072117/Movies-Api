@@ -55,6 +55,10 @@ export const Home = () => {
         </div>
       </div>
       <CardMovie data={movies}/>
+      <div className="container-popular">
+        <div className="title-popular">Popular</div>
+        <div className="icon-ellipsis"><i className="fas fa-ellipsis-h"></i></div>
+      </div>
       <ListCards data={movies}/>
 
       <Nav />
