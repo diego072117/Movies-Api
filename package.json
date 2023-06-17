@@ -14,6 +14,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.13.0",
     "react-slick": "^0.29.0",
+    "react-youtube": "^10.1.0",
     "sass": "^1.63.4",
     "slick-carousel": "^1.8.1"
   },

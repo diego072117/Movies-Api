@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { MovieDetails } from "../../components/MovieDetails/MovieDetails";
 import { Nav } from "../../components/Nav/Nav";
 import { SwiperCards } from "../../components/SwiperCards/SwiperCards";
-import { getMovieById, getAllMovies } from "../../services/Api";
+import { getMovieById, getAllMovies, getMovieVidio } from "../../services/Api";
 import { Loading } from "../loading/Loading";
 import "./Details.scss";
 
@@ -11,7 +11,8 @@ export const Details = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [movies, setMovies] = useState([]);
-  
+  const [playing, setPlaying] = useState(false);
+
   useEffect(() => {
     const dataFromAPI = async () => {
       const data = await getAllMovies();
@@ -30,11 +31,18 @@ export const Details = () => {
     dataFromAPI();
   }, [id]);
 
-  if (!movie || (movie.length === 0 && !movies) || movies.length === 0) {
-    return <Loading/>
-  }
+  useEffect(() => {
+    const dataFromAPI = async () => {
+      const data = await getMovieVidio(id);
+      setPlaying(data);
+    };
 
-  console.log('movie',movie);
+    dataFromAPI();
+  }, [id]);
+
+  if (!movie || (movie.length === 0 && !movies) || movies.length === 0) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -46,7 +54,7 @@ export const Details = () => {
           <i className="fa-regular fa-bookmark"></i>
         </div>
       </div>
-      <MovieDetails data={movie} />
+      <MovieDetails data={movie} dataMovie={playing} />
       <div className="recomendation-details">Recommended</div>
       <div className="swiper-cards">
         <SwiperCards data={movies} />

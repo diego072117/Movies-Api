@@ -16,6 +16,7 @@ export const CardMovie = ({ data }) => {
       clearInterval(timer);
     };
   }, [data]);
+  
 
   const currentMovie = data[currentMovieIndex];
 

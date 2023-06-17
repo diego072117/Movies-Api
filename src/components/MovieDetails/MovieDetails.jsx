@@ -2,7 +2,7 @@ import "./MovieDetails.scss";
 
 const MAX_CHARACTERS_DESCRIPTION = 300;
 
-export const MovieDetails = ({ data }) => {
+export const MovieDetails = ({ data, dataMovie }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 
   const start = (data.vote_average / 2).toFixed(1);
@@ -18,6 +18,14 @@ export const MovieDetails = ({ data }) => {
     data.genres[0].name
   } | ${runtime()}`;
 
+  const findOficialTrailer = dataMovie.findIndex((item, currentIndex) => {
+    return item.name === "Official Trailer";
+  });
+
+  const trailer = findOficialTrailer !== -1 ? findOficialTrailer : 0;
+
+  const trailerUrl = `https://www.youtube.com/watch?v=${dataMovie[trailer].key}`;
+
   return (
     <>
       <div className="container-card-details">
@@ -31,9 +39,13 @@ export const MovieDetails = ({ data }) => {
               <div className="vote-average">{start}</div>
             </div>
             <div className="container-play-details">
-              <div className="button-play-details">
+              <a
+                href={trailerUrl}
+                target="_blank"
+                className="button-play-details"
+              >
                 <i className="fa-solid fa-play"></i>
-              </div>
+              </a>
               <p className="watch-detail">Watch now</p>
             </div>
           </div>
@@ -47,10 +59,10 @@ export const MovieDetails = ({ data }) => {
       </div>
       <div className="desciption-movie-details">
         <div className="story-time">
-        <p className="title-description-details">Story line</p>
-        <p className="title-description-details">{data.release_date}</p>
+          <p className="title-description-details">Story line</p>
+          <p className="title-description-details">{data.release_date}</p>
         </div>
-        
+
         <p className="description-details">
           {data.overview.length > MAX_CHARACTERS_DESCRIPTION
             ? `${data.overview.slice(0, MAX_CHARACTERS_DESCRIPTION)}...`
