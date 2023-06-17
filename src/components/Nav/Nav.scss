@@ -4,6 +4,7 @@
   
     & .nav {
       background-color: #C4C4C41A;
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-around;
       position: fixed;

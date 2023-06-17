@@ -46,7 +46,11 @@ export const MovieDetails = ({ data }) => {
         </div>
       </div>
       <div className="desciption-movie-details">
+        <div className="story-time">
         <p className="title-description-details">Story line</p>
+        <p className="title-description-details">{data.release_date}</p>
+        </div>
+        
         <p className="description-details">
           {data.overview.length > MAX_CHARACTERS_DESCRIPTION
             ? `${data.overview.slice(0, MAX_CHARACTERS_DESCRIPTION)}...`

@@ -81,8 +81,8 @@ export const Home = () => {
           <i className="fas fa-ellipsis-h"></i>
         </div>
       </div>
-      <SwiperCards data={movies} />
-      <Nav />
+      <SwiperCards data={movies}/>
+      
       <Nav />
     </>
   );

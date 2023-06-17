@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./CardMovie.scss";
 
 export const CardMovie = ({ data }) => {
@@ -32,9 +33,9 @@ export const CardMovie = ({ data }) => {
               <h1 className="title-movie">{currentMovie.title}</h1>
             </div>
           </div>
-          <div className="play">
+          <Link className="play" to={`/movieDetails/${currentMovie.id}`}>
             <i className="fa-solid fa-play"></i>
-          </div>
+          </Link>
         </div>
       </div>
     </>
