@@ -4,6 +4,7 @@ import { MovieDetails } from "../../components/MovieDetails/MovieDetails";
 import { Nav } from "../../components/Nav/Nav";
 import { SwiperCards } from "../../components/SwiperCards/SwiperCards";
 import { getMovieById, getAllMovies } from "../../services/Api";
+import { Loading } from "../loading/Loading";
 import "./Details.scss";
 
 export const Details = () => {
@@ -30,7 +31,7 @@ export const Details = () => {
   }, [id]);
 
   if (!movie || (movie.length === 0 && !movies) || movies.length === 0) {
-    return <div>Loading...</div>;
+    return <Loading/>
   }
 
   console.log('movie',movie);
