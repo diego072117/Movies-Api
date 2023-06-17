@@ -13,15 +13,6 @@ export const Details = () => {
   
   useEffect(() => {
     const dataFromAPI = async () => {
-      const data = await getMovieById(id);
-      setMovie(data);
-    };
-
-    dataFromAPI();
-  }, []);
-
-  useEffect(() => {
-    const dataFromAPI = async () => {
       const data = await getAllMovies();
       setMovies(data.results);
     };
@@ -29,9 +20,20 @@ export const Details = () => {
     dataFromAPI();
   }, []);
 
+  useEffect(() => {
+    const dataFromAPI = async () => {
+      const data = await getMovieById(id);
+      setMovie(data);
+    };
+
+    dataFromAPI();
+  }, [id]);
+
   if (!movie || (movie.length === 0 && !movies) || movies.length === 0) {
     return <div>Loading...</div>;
   }
+
+  console.log('movie',movie);
 
   return (
     <>

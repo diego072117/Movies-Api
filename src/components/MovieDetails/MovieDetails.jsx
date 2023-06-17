@@ -5,8 +5,6 @@ const MAX_CHARACTERS_DESCRIPTION = 300;
 export const MovieDetails = ({ data }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 
-  console.log("soy la data desde el hijo", data);
-
   const start = (data.vote_average / 2).toFixed(1);
 
   const runtime = () => {
