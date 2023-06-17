@@ -40,7 +40,7 @@ export const Details = () => {
     dataFromAPI();
   }, [id]);
 
-  if (!movie || (movie.length === 0 && !movies) || movies.length === 0) {
+  if (!movie || movie.length === 0 && !movies || movies.length === 0 && !playing) {
     return <Loading />;
   }
 
@@ -59,7 +59,6 @@ export const Details = () => {
       <div className="swiper-cards">
         <SwiperCards data={movies} />
       </div>
-      <Nav />
     </>
   );
 };

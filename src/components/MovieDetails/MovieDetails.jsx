@@ -1,3 +1,4 @@
+import { Loading } from "../../pages/loading/Loading";
 import "./MovieDetails.scss";
 
 const MAX_CHARACTERS_DESCRIPTION = 300;
@@ -17,6 +18,10 @@ export const MovieDetails = ({ data, dataMovie }) => {
   const detailsMovie = `${data.original_language} | ${
     data.genres[0].name
   } | ${runtime()}`;
+
+  if (!Array.isArray(dataMovie)) {
+    return <Loading />;
+  }
 
   const findOficialTrailer = dataMovie.findIndex((item, currentIndex) => {
     return item.name === "Official Trailer";

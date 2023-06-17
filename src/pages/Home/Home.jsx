@@ -82,8 +82,6 @@ export const Home = () => {
         </div>
       </div>
       <SwiperCards data={movies}/>
-      
-      <Nav />
     </>
   );
 };
