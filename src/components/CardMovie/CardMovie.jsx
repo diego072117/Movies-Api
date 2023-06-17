@@ -16,32 +16,27 @@ export const CardMovie = ({ data }) => {
     };
   }, [data]);
 
-  if (!data || data.length === 0) {
-    return <div>Loading...</div>;
-  }
-
   const currentMovie = data[currentMovieIndex];
 
   const fondo = IMAGE_PATH + currentMovie.backdrop_path;
 
   return (
     <>
-    <div className="container-card-principal">
-
-      <div
-        className="container-card"
-        style={{ backgroundImage: `url(${fondo})` }}
-      >
-        <div className="content-movie">
-          <div>
-            <h1 className="title-movie">{currentMovie.title}</h1>
+      <div className="container-card-principal">
+        <div
+          className="container-card"
+          style={{ backgroundImage: `url(${fondo})` }}
+        >
+          <div className="content-movie">
+            <div>
+              <h1 className="title-movie">{currentMovie.title}</h1>
+            </div>
+          </div>
+          <div className="play">
+            <i className="fa-solid fa-play"></i>
           </div>
         </div>
-        <div className="play">
-          <i className="fa-solid fa-play"></i>
-        </div>
       </div>
-    </div>
     </>
   );
 };

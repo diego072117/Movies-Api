@@ -1,0 +1,23 @@
+.options-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em;
+    color: #fff;
+    font-size: 1.5em;
+
+    & .arrow-exit{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.recomendation-details{
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    margin: 0 1.5em;
+}
+
+.swiper-cards{
+    margin: 0 0.8em;
+}

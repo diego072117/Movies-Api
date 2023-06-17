@@ -1,0 +1,100 @@
+.container-card-details {
+  display: flex;
+  justify-content: center;
+}
+
+.container-details {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 204px;
+  margin: 0 1em;
+  max-width: 340px;
+  width: 100%;
+  border-radius: 39px;
+
+  & .content-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8em;
+  }
+
+  & .star {
+    display: flex;
+    color: #ffce31;
+    margin: 0 1em;
+  }
+
+  & .vote-average {
+    margin: 0 5px;
+    color: #fff;
+  }
+
+  & .container-play-details {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    //backdrop-filter: blur(25px);
+    border-radius: 20px 0px 0px 20px;
+    padding: 0 1em 0 0.2em;
+    height: 2.5em;
+
+    & .button-play-details {
+      background-color: #fff;
+      color: #ff722a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      margin: 0 1em 0 0;
+    }
+
+    & .watch-detail {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+}
+
+.movie-details {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 1em;
+
+  & .title-movie-detail {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  & .details-time {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.5em 2em;
+    font-size: 14px;
+    color: #a5a5a5;
+    padding: 0em 0em 1em;
+    border-bottom: 1px solid #a5a5a5;
+  }
+}
+
+.desciption-movie-details {
+  font-family: "Roboto", sans-serif;
+  margin: 0 1.5em;
+  & .title-description-details {
+    color: #fff;
+    font-size: 14px;
+  }
+
+  & .description-details {
+    color: #A5A5A5;
+  }
+}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { CardMovie } from "../components/CardMovie/CardMovie";
-import { ListCards } from "../components/ListCards/ListCards";
-import { Nav } from "../components/Nav/Nav";
-import { getAllMovies } from "../services/Api";
+import { CardMovie } from "../../components/CardMovie/CardMovie";
+import { SwiperCards } from "../../components/SwiperCards/SwiperCards";
+import { Nav } from "../../components/Nav/Nav";
+import { getAllMovies } from "../../services/Api";
 import "./Home.scss";
 
 export const Home = () => {
@@ -22,30 +22,42 @@ export const Home = () => {
     setSelectedFilter(filter);
   };
 
+  if (!movies || movies.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className="title">Hi, Hoang</div>
       <div className="filters">
         <div
-          className={`filterOption ${selectedFilter === "All" ? "selected" : ""}`}
+          className={`filterOption ${
+            selectedFilter === "All" ? "selected" : ""
+          }`}
           onClick={() => handleFilterClick("All")}
         >
           All
         </div>
         <div
-          className={`filterOption ${selectedFilter === "Action" ? "selected" : ""}`}
+          className={`filterOption ${
+            selectedFilter === "Action" ? "selected" : ""
+          }`}
           onClick={() => handleFilterClick("Action")}
         >
           Action
         </div>
         <div
-          className={`filterOption ${selectedFilter === "Comedy" ? "selected" : ""}`}
+          className={`filterOption ${
+            selectedFilter === "Comedy" ? "selected" : ""
+          }`}
           onClick={() => handleFilterClick("Comedy")}
         >
           Comedy
         </div>
         <div
-          className={`filterOption ${selectedFilter === "Horor" ? "selected" : ""}`}
+          className={`filterOption ${
+            selectedFilter === "Horor" ? "selected" : ""
+          }`}
           onClick={() => handleFilterClick("Horor")}
         >
           Horor
@@ -54,9 +66,14 @@ export const Home = () => {
           <i className="fa-solid fa-filter"></i>
         </div>
       </div>
-      <CardMovie data={movies}/>
-      <ListCards data={movies}/>
-
+      <CardMovie data={movies} />
+      <div className="container-popular">
+        <div className="title-popular">Popular</div>
+        <div className="icon-ellipsis">
+          <i className="fas fa-ellipsis-h"></i>
+        </div>
+      </div>
+      <SwiperCards data={movies} />
       <Nav />
     </>
   );
