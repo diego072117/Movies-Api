@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardMovie } from "../../components/CardMovie/CardMovie";
-import { ListCards } from "../../components/SwiperCards/SwiperCards";
+import { SwiperCards } from "../../components/SwiperCards/SwiperCards";
 import { Nav } from "../../components/Nav/Nav";
 import { getAllMovies } from "../../services/Api";
 import "./Home.scss";
@@ -73,8 +73,7 @@ export const Home = () => {
           <i className="fas fa-ellipsis-h"></i>
         </div>
       </div>
-      <ListCards data={movies} />
-
+      <SwiperCards data={movies} />
       <Nav />
     </>
   );

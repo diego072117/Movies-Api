@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const MAX_CHARACTERS_TITLE = 11;
 
-export const ListCards = ({ data }) => {
+export const SwiperCards = ({ data }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 
 
@@ -63,7 +63,7 @@ export const ListCards = ({ data }) => {
                 ? `${movie.title.slice(0, MAX_CHARACTERS_TITLE)}...`
                 : movie.title}
             </p>
-            <Link to={`/movieDetails/${movie.id}`} className="play">
+            <Link className="play" to={`/movieDetails/${movie.id}`}>
               <i className="fa-solid fa-play"></i>
             </Link>
           </div>

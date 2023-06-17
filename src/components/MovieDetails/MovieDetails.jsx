@@ -1,5 +1,7 @@
 import "./MovieDetails.scss";
 
+const MAX_CHARACTERS_DESCRIPTION = 300;
+
 export const MovieDetails = ({ data }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 
@@ -14,7 +16,9 @@ export const MovieDetails = ({ data }) => {
     return `${hours}h${minutes}m`;
   };
 
-  const detailsMovie = `${data.original_language} | ${data.genres[0].name} | ${runtime()}`
+  const detailsMovie = `${data.original_language} | ${
+    data.genres[0].name
+  } | ${runtime()}`;
 
   return (
     <>
@@ -42,6 +46,14 @@ export const MovieDetails = ({ data }) => {
         <div className="details-time">
           <div className="language">{detailsMovie}</div>
         </div>
+      </div>
+      <div className="desciption-movie-details">
+        <p className="title-description-details">Story line</p>
+        <p className="description-details">
+          {data.overview.length > MAX_CHARACTERS_DESCRIPTION
+            ? `${data.overview.slice(0, MAX_CHARACTERS_DESCRIPTION)}...`
+            : data.overview}
+        </p>
       </div>
     </>
   );
