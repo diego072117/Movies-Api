@@ -19,6 +19,8 @@ export const CardMovie = ({ data }) => {
 
   const currentMovie = data[currentMovieIndex];
 
+  const start = (currentMovie.vote_average / 2).toFixed(1);
+
   const fondo = IMAGE_PATH + currentMovie.backdrop_path;
 
   return (
@@ -31,6 +33,10 @@ export const CardMovie = ({ data }) => {
           <div className="content-movie">
             <div>
               <h1 className="title-movie">{currentMovie.title}</h1>
+            </div>
+            <div className="calification">
+              <i className="fa-sharp fa-solid fa-star"></i>
+              <div className="vote">{start}</div>
             </div>
           </div>
           <Link className="play" to={`/movieDetails/${currentMovie.id}`}>

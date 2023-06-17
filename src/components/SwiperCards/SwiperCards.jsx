@@ -9,7 +9,6 @@ const MAX_CHARACTERS_TITLE = 11;
 export const SwiperCards = ({ data }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 
-
   const settings = {
     dots: false,
     fade: false,
@@ -58,7 +57,7 @@ export const SwiperCards = ({ data }) => {
             alt=""
           />
           <div className="content-card-list">
-            <p>
+            <p className="title-swiper-card">
               {movie.title.length > MAX_CHARACTERS_TITLE
                 ? `${movie.title.slice(0, MAX_CHARACTERS_TITLE)}...`
                 : movie.title}
@@ -66,6 +65,10 @@ export const SwiperCards = ({ data }) => {
             <Link className="play" to={`/movieDetails/${movie.id}`}>
               <i className="fa-solid fa-play"></i>
             </Link>
+            <div className="swiper-votation">
+              <i className="fa-sharp fa-solid fa-star"></i>
+              <div className="vote">{(movie.vote_average / 2).toFixed(1)}</div>
+            </div>
           </div>
         </div>
       ))}
