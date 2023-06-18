@@ -33,6 +33,7 @@
 .container-search-movie {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 1em;
 
   & .card-search {
