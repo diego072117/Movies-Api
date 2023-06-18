@@ -17,8 +17,6 @@ export const Search = () => {
     setSearchResult(result);
   };
 
-  console.log("datos desde la vista", searchResult);
-
   return (
     <>
       <div className="title">Hi, Hoang</div>
