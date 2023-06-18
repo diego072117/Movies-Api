@@ -50,6 +50,7 @@
       height: 2em;
       border-radius: 50%;
       margin: 0 1em 0 0;
+      text-decoration: none;
     }
 
     & .watch-detail {
@@ -89,6 +90,12 @@
 .desciption-movie-details {
   font-family: "Roboto", sans-serif;
   margin: 0 1.5em;
+
+  & .story-time{
+    display: flex;
+    justify-content: space-between;
+  }
+
   & .title-description-details {
     color: #fff;
     font-size: 14px;

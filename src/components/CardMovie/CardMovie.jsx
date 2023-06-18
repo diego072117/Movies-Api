@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./CardMovie.scss";
 
 export const CardMovie = ({ data }) => {
@@ -15,8 +16,11 @@ export const CardMovie = ({ data }) => {
       clearInterval(timer);
     };
   }, [data]);
+  
 
   const currentMovie = data[currentMovieIndex];
+
+  const start = (currentMovie.vote_average / 2).toFixed(1);
 
   const fondo = IMAGE_PATH + currentMovie.backdrop_path;
 
@@ -31,10 +35,14 @@ export const CardMovie = ({ data }) => {
             <div>
               <h1 className="title-movie">{currentMovie.title}</h1>
             </div>
+            <div className="calification">
+              <i className="fa-sharp fa-solid fa-star"></i>
+              <div className="vote">{start}</div>
+            </div>
           </div>
-          <div className="play">
+          <Link className="play" to={`/movieDetails/${currentMovie.id}`}>
             <i className="fa-solid fa-play"></i>
-          </div>
+          </Link>
         </div>
       </div>
     </>
