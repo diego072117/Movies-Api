@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { CardMovie } from "../../components/CardMovie/CardMovie";
 import { SwiperCards } from "../../components/SwiperCards/SwiperCards";
-import { Nav } from "../../components/Nav/Nav";
 import { getAllMovies } from "../../services/Api";
-import "./Home.scss";
 import { Loading } from "../Loading/Loading";
+import "./Home.scss";
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -24,7 +23,7 @@ export const Home = () => {
   };
 
   if (!movies || movies.length === 0) {
-    return <Loading/>
+    return <Loading />;
   }
 
   return (
@@ -81,7 +80,7 @@ export const Home = () => {
           <i className="fas fa-ellipsis-h"></i>
         </div>
       </div>
-      <SwiperCards data={movies}/>
+      <SwiperCards data={movies} />
     </>
   );
 };
