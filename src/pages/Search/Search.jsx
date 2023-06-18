@@ -31,9 +31,9 @@ export const Search = () => {
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
-      {searchResult.map((movies) => (
-        <div key={movies.id} className="container-search-movie">
-          <div className="card-search">
+      <div className="container-search-movie">
+        {searchResult.map((movies) => (
+          <div key={movies.id} className="card-search">
             <div className="container-image-search">
               <img
                 className="img-search"
@@ -70,11 +70,8 @@ export const Search = () => {
               </div>
             </div>
           </div>
-        </div>
-      ))}
-      {/* {searchResult.map((movies) => (
-       
-      ))} */}
+        ))}
+      </div>
     </>
   );
 };
