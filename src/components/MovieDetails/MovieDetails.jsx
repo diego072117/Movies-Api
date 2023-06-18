@@ -5,6 +5,8 @@ const MAX_CHARACTERS_DESCRIPTION = 300;
 
 export const MovieDetails = ({ data, dataMovie }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
+  const DEFAULT_IMG =
+    "https://i.pinimg.com/564x/c5/4d/e5/c54de5aa13ce2bff9e49225919f9bbd9.jpg";
 
   const start = (data.vote_average / 2).toFixed(1);
 
@@ -29,14 +31,18 @@ export const MovieDetails = ({ data, dataMovie }) => {
 
   const trailer = findOficialTrailer !== -1 ? findOficialTrailer : 0;
 
-  const trailerUrl = `https://www.youtube.com/watch?v=${dataMovie[trailer].key}`;
+  const trailerUrl = `https://www.youtube.com/watch?v=${dataMovie[trailer]?.key}`;
+
+  const completeImg = data.backdrop_path
+    ? IMAGE_PATH + data.backdrop_path
+    : DEFAULT_IMG;
 
   return (
     <>
       <div className="container-card-details">
         <div
           className="container-details"
-          style={{ backgroundImage: `url(${IMAGE_PATH}${data.backdrop_path})` }}
+          style={{ backgroundImage: `url(${completeImg}` }}
         >
           <div className="content-details">
             <div className="star">
